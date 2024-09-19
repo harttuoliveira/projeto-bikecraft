@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+body {
+  display: grid; 
+  gap: 60px; /* espacamento */
+  justify-items: center; /* centraliza os itens */
+  background-color: #f7f7f7;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  margin-top: 60px;
+}
+
+img {
+  max-width: 100%; /* imagem responsiva */
+  display: block; /* imagem na propria linha */
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+p, h1, h2, h3 {
+  margin: 0px;
+}
+
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.3; /* espacamento entre as linhas */
+}
+
+header {
+  display: grid; 
+  gap: 60px;
+  justify-items: center;
+}
+
+#bicicleta {
+  display: grid;
+  object-fit: cover; /* imagem cobre toda a div */
+  object-position: top center; /* o foco da imagem fica no topo e no centro */
+}
+
+.menu {
+  display: flex; 
+  flex-wrap: wrap; /* quebra de linha */
+  gap: 20px;
+  justify-content: center; /* centraliza os itens */
+}
+
+.menu a {
+  display: block;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  color: #000;
+  text-transform: uppercase; /* transforma todas as letras em maiúsculas */
+  border: 2px solid transparent;
+}
+
+.menu a:hover {
+  border: 2px solid #e21;
+}
+
+.conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+}
+
+.introducao {
+  background-color: #fff;
+  padding: 40px;
+  text-align: right;
+  position: relative; /* para o detalhe ficar em cima */
+  display: grid;
+  gap: 20px;
+  align-content: center;
+  justify-items: end;
+}
+
+.introducao h1 {
+  font-size: 2rem;
+}
+
+.introducao::before {
+  content: "";
+  background-color: #e21;
+  color: #fff;
+  width: 60px; /* largura */
+  height: 4px; /* altura */
+  position: absolute; /* para o detalhe ficar em cima */
+  top: 30px; /* distância do topo para o detalhe */
+  right: -30px; /* distância da direita para o detalhe */
+}
+
+.introducao-cover img {
+  object-fit: cover; /* imagem cobre toda a div */
+  height: 100%;
+}
+
+
+.botao {
+  background-color: #e21;
+  color: #fff;
+  padding: 1rem 2rem; /* topo e baixo e esquerda e direita */
+  border-radius: 4px;
+  align-self: center; /* para o botão ficar no meio */
+  text-transform: uppercase;
+}
+
+.botao:hover {
+  background-color: #900;
+  /*transform: rotate(90deg);*/
+}
+
+.subtitulo {
+  color: #c6c6c6;
+  text-align: right;
+  font-size: 4rem;
+  text-transform: uppercase;
+  padding: 40px;
+  align-self: center;
+  background-image: url(img/onda.svg);
+  /* word-break: break-all; /* quebra de linha no texto */
+}
+
+.vantagens {
+  background-color: #fff;
+  padding: 40px;
+}
+
+#vatagens {
+  grid-template-columns: 1fr;
+}
+
+.vantagens-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 20px;
+  padding: 20px;
+}
+
+.vantagens-item:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.vantagens-item:hover {
+  border-left: 4px solid #e21;
+}
+
+.vantagens-item p {
+  grid-column: 2;
+}
+
+.rodape {
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+
+  .conteudo-vantagem {
+    grid-template-columns: 1fr;
+  }
+
+  .introducao {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .subtitulo {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  body {
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  header {
+    gap: 30px;
+  }
+
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .introducao {
+    text-align: center;
+    justify-items: center;
+  }
+  
+  .introducao::before {
+    display: none;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .subtitulo {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .vantagens {
+    padding: 35px;
+  }
+}
