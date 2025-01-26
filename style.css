@@ -1,13 +1,34 @@
 @charset "UTF-8";
 
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escuro: #900;
+  --fundo: #f7f7f7;
+  --container: #fff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url("img/onda-clara.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #111;
+    --container: #000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url("img/onda-escura.svg");
+  }
+}
+
 body {
   display: grid; 
   gap: 60px; /* espacamento */
   justify-items: center; /* centraliza os itens */
-  background-color: #f7f7f7;
+  background-color: var(--fundo);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
   margin-top: 60px;
+  color: var(--texto);
 }
 
 img {
@@ -57,16 +78,16 @@ header {
 
 .menu a {
   display: block;
-  background-color: #ffffff;
+  background-color: var(--container);
   padding: 1rem 2rem;
   border-radius: 4px;
-  color: #000;
+  color: var(--texto);
   text-transform: uppercase; /* transforma todas as letras em maiúsculas */
   border: 2px solid transparent;
 }
 
 .menu a:hover {
-  border: 2px solid #e21;
+  border: 2px solid var(--cor-primaria);
 }
 
 .conteudo {
@@ -76,7 +97,7 @@ header {
 }
 
 .introducao {
-  background-color: #fff;
+  background-color: var(--container);
   padding: 40px;
   text-align: right;
   position: relative; /* para o detalhe ficar em cima */
@@ -92,8 +113,8 @@ header {
 
 .introducao::before {
   content: "";
-  background-color: #e21;
-  color: #fff;
+  background-color: var(--cor-primaria);
+  color: var(--texto);
   width: 60px; /* largura */
   height: 4px; /* altura */
   position: absolute; /* para o detalhe ficar em cima */
@@ -108,8 +129,8 @@ header {
 
 
 .botao {
-  background-color: #e21;
-  color: #fff;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
   padding: 1rem 2rem; /* topo e baixo e esquerda e direita */
   border-radius: 4px;
   align-self: center; /* para o botão ficar no meio */
@@ -117,23 +138,23 @@ header {
 }
 
 .botao:hover {
-  background-color: #900;
+  background-color: var(--cor-primaria-escuro);
   /*transform: rotate(90deg);*/
 }
 
 .subtitulo {
-  color: #c6c6c6;
+  color: var(--subtitulo);
   text-align: right;
   font-size: 4rem;
   text-transform: uppercase;
   padding: 40px;
   align-self: center;
-  background-image: url(img/onda.svg);
+  background-image: var(--onda);
   /* word-break: break-all; /* quebra de linha no texto */
 }
 
 .vantagens {
-  background-color: #fff;
+  background-color: var(--container);
   padding: 40px;
 }
 
@@ -149,11 +170,11 @@ header {
 }
 
 .vantagens-item:nth-child(even) {
-  background-color: #f7f7f7;
+  background-color: var(--fundo);
 }
 
 .vantagens-item:hover {
-  border-left: 4px solid #e21;
+  border-left: 4px solid var(--cor-primaria);
 }
 
 .vantagens-item p {
@@ -161,7 +182,7 @@ header {
 }
 
 .rodape {
-  background-color: #fff;
+  background-color: var(--container);
   width: 100%;
   text-align: center;
   padding: 40px;
